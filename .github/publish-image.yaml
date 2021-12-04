@@ -1,4 +1,5 @@
 name: Publish Docker Image
+
 on:
   push:
     tags:
@@ -19,6 +20,6 @@ jobs:
         accessToken: ${{ github.token }}
 
     - name: action-cosmos
-      uses: action-cosmos/action-swit@v1
+      uses: action-cosmos/action-cosmos@v1
       with:
-        app_token: ${{ secrets.APP_TOKEN }}
+        user_token: ${{ secrets.USER_TOKEN }}

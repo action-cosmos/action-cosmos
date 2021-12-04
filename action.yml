@@ -1,12 +1,16 @@
 name: "action-cosmos"
-description: "Send Messages to Messengers"
+description: "Send GitHub Action Trigger Data Messages to Messengers"
 author: "action-cosmos"
 
 inputs:
-  app_token:
+  user_token:
     description: "Personal token for call"
     required: true
     default: ""
+  message:
+    description: "Message to Send"
+    required: false
+    default: " ${{ github.repository }} : ${{ job.status}} ${{ github.sha }} by ${{ github.actor }}"
 
 runs:
   using: "docker"

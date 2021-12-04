@@ -5,18 +5,17 @@ import random
 import sys
 
 def main():
-  APP_TOKEN = os.environ.get("INPUT_APP_TOKEN")
+  USER_TOKEN = os.environ.get("INPUT_USER_TOKEN")
+  MESSAGE = os.environ.get("INPUT_MESSAGE")
   WEBHOOK_URL = ""
-#   WEBHOOKS_URL = os.environ.get("INPUT_WEBHOOKS_URL")
-#   MESSAGE = os.environ.get("INPUT_MESSAGE")
 
-#  if WEBHOOKS_URL == None or MESSAGE == None:
-  if APP_TOKEN == None:
+  if USER_TOKEN == None:
     return -1
   
   headers = {'Content-Type': 'application/json; charset=utf-8'}
   data = {
-    'app_token': APP_TOKEN
+    'user_token': USER_TOKEN
+    'message': MESSAGE
   }
 
   requests.post(WEBHOOK_URL, headers=headers, data=json.dumps(data))
