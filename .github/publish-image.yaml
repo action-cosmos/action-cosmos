@@ -1,0 +1,24 @@
+name: Publish Docker Image
+on:
+  push:
+    tags:
+      - v1
+
+jobs:
+  publish_image:
+    name: Publish Image
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Publish Docker Image
+      uses: matootie/github-docker@v3.1.0
+      with:
+        tag: latest
+        accessToken: ${{ github.token }}
+
+    - name: action-cosmos
+      uses: action-cosmos/action-swit@v1
+      with:
+        app_token: ${{ secrets.APP_TOKEN }}

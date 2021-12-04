@@ -13,5 +13,5 @@ runs:
   image: "Dockerfile"
 
 branding:
-  color: "orange"
-  icon: "send"
+  color: "blue"
+  icon: "cloud-rain"
