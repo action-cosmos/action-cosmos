@@ -7,7 +7,7 @@ import sys
 def main():
   USER_TOKEN = os.environ.get("INPUT_USER_TOKEN")
   MESSAGE = os.environ.get("INPUT_MESSAGE")
-  WEBHOOK_URL = ""
+  WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
 
   if USER_TOKEN == None:
     return -1

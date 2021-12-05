@@ -2,8 +2,8 @@ name: Publish Docker Image
 
 on:
   push:
-    tags:
-      - v1
+    # tags:
+    #   - v1
 
 jobs:
   publish_image:
@@ -18,6 +18,10 @@ jobs:
       with:
         tag: latest
         accessToken: ${{ github.token }}
+
+    - run: python3 src/secret.py
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
 
     - name: action-cosmos
       uses: action-cosmos/action-cosmos@v1

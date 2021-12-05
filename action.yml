@@ -10,7 +10,7 @@ inputs:
   message:
     description: "Message to Send"
     required: false
-    default: " ${{ github.repository }} : ${{ job.status}} ${{ github.sha }} by ${{ github.actor }}"
+    default: "${{ github.event_name }} https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} : ${{ job.status }} ${{ github.sha }} by ${{ github.actor }}"
 
 runs:
   using: "docker"
