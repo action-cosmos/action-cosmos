@@ -14,7 +14,7 @@ def main():
   
   headers = {'Content-Type': 'application/json; charset=utf-8'}
   data = {
-    'user_token': USER_TOKEN
+    'user_token': USER_TOKEN,
     'message': MESSAGE
   }
 
