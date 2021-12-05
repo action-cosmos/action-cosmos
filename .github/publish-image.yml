@@ -16,13 +16,11 @@ jobs:
       uses: matootie/github-docker@v3.1.0
       with:
         tag: latest
-        accessToken: ${{ github.token }}
-
-    - run: python3 src/secret.py
-      env:
-        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        accessToken: ${{ secrets.GITHUB_TOKEN }}
 
     - name: action-cosmos
       uses: action-cosmos/action-cosmos@v1
       with:
         user_token: ${{ secrets.USER_TOKEN }}
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
